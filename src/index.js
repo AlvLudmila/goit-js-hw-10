@@ -35,7 +35,8 @@ fetchBreeds().then(resp => {
 })
 .catch(err => {
     refs.loader.classList.remove('is-hidden');
-    Report.failure('Error', `${err.message}`, 'Okey');
+    console.log('Error', `${err.message}`, 'Okey');
+    // Report.failure('Error', `${err.message}`, 'Okey');
 }
     )
 
@@ -55,6 +56,18 @@ fetchBreeds().then(resp => {
         
     })
     }
+
+
+    function fetchCatByBreeds() {
+        // https://api.thecatapi.com/v1/images/search?limit=10&breed_ids=beng&api_key=REPLACE_ME
+        const QUES_URL = 'https://api.thecatapi.com/v1/images/search&breed_ids=beng';
+        const API_KEY = 'live_LtkZH2RZTwm1ZkJ42VIgRyADMPcrXW1Hpm3jHjYvBBjTei7jyoFIFon0SYtuO8Mc';
+        
+    //    return fetch(`${QUES_URL}?api_key=${API_KEY}`)
+         fetch
+        .then((data) => createMarkup())
+    }
+
 
 
 
